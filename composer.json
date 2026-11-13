@@ -1,0 +1,18 @@
+{
+    "name": "student/forum-refactor",
+    "description": "Nested forum replies lab (PHP, MySQL, PDO, Bramus Router, Mustache)",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "bramus/router": "^1.6",
+        "mustache/mustache": "^2.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
