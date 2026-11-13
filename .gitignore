@@ -1,5 +1,4 @@
-/vendor/
-/config/database.php
-.env
-.DS_Store
-Thumbs.db
+.php_cs.cache
+composer.lock
+mustache.php
+vendor

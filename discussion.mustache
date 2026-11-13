@@ -1,0 +1,60 @@
+{{> header}}
+{{#discussion}}
+<article class="discussion">
+  <h1>{{title}}</h1>
+  <p class="meta">Started by <strong>{{author}}</strong> · <time datetime="{{created_iso}}">{{created_utc}}</time></p>
+  <p class="body">{{body}}</p>
+</article>
+{{/discussion}}
+
+
+<section class="comments">
+  <h2>Replies ({{comment_count}})</h2>
+
+
+  {{#comments}}
+  <div class="comment indent-{{indent}}" id="comment-{{id}}">
+    <img class="avatar" src="{{avatar}}" alt="" width="40" height="40">
+    <div class="comment-main">
+      <p class="meta">
+        <strong>{{author}}</strong>
+        · <span class="depth-label">Depth {{depth}}</span>
+        · <time datetime="{{created_iso}}">{{created_utc}}</time>
+      </p>
+      <p class="body">{{body}}</p>
+
+
+      {{#logged_in}}
+      <details class="reply">
+        <summary>Reply</summary>
+        <form method="post" action="/discussions/{{discussion.id}}/comments">
+          <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+          <input type="hidden" name="parent_id" value="{{id}}">
+          <label for="reply-{{id}}">Reply to {{author}}</label>
+          <textarea id="reply-{{id}}" name="body" rows="3" maxlength="2000" required></textarea>
+          <button type="submit">Post reply</button>
+        </form>
+      </details>
+      {{/logged_in}}
+    </div>
+  </div>
+  {{/comments}}
+  {{^comments}}<p>No replies yet.</p>{{/comments}}
+</section>
+
+
+<section class="new-comment">
+  {{#logged_in}}
+  <h2>Add a top-level comment</h2>
+  <form method="post" action="/discussions/{{discussion.id}}/comments">
+    <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+    <label for="new-body">Your comment</label>
+    <textarea id="new-body" name="body" rows="4" maxlength="2000" required></textarea>
+    <button type="submit">Post comment</button>
+  </form>
+  {{/logged_in}}
+  {{^logged_in}}
+  <p><a href="/login">Log in</a> or <a href="/register">register</a> to reply.</p>
+  {{/logged_in}}
+</section>
+{{> footer}}

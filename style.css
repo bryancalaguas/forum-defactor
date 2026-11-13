@@ -1,0 +1,57 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.5; color: #1f2328; background: #f6f8fa; }
+main { max-width: 820px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+a { color: #0969da; }
+
+
+.site-header { display: flex; justify-content: space-between; align-items: center;
+  padding: .75rem 1.5rem; background: #24292f; color: #fff; }
+.site-header a { color: #fff; text-decoration: none; margin-left: 1rem; }
+.site-header .brand { margin-left: 0; font-weight: 700; }
+.site-header nav { display: flex; align-items: center; gap: .75rem; }
+.inline { display: inline; }
+.site-footer { text-align: center; color: #57606a; font-size: .85rem; padding: 1rem; }
+
+
+.flash { background: #dafbe1; border: 1px solid #4ac26b; padding: .5rem .75rem; border-radius: 6px; }
+.errors { background: #ffebe9; border: 1px solid #ff8182; padding: .5rem 2rem; border-radius: 6px; }
+.error-message { font-size: 1.1rem; }
+
+
+.discussion, .comment, .card { background: #fff; border: 1px solid #d0d7de; border-radius: 8px; }
+.discussion { padding: 1rem 1.25rem; }
+.meta { color: #57606a; font-size: .875rem; margin: 0 0 .25rem; }
+.body { white-space: pre-wrap; overflow-wrap: anywhere; margin: .25rem 0; }
+
+
+.comment { display: flex; gap: .75rem; padding: .75rem; margin: .5rem 0; }
+.avatar { border-radius: 50%; flex-shrink: 0; }
+.comment-main { flex: 1; min-width: 0; }
+.depth-label { background: #ddf4ff; color: #0550ae; border-radius: 999px; padding: 0 .5rem; font-size: .75rem; }
+
+
+/* Indentation is capped at level 8; the depth label still shows the true depth. */
+.indent-0 { margin-left: 0; }
+.indent-1 { margin-left: 2rem; }
+.indent-2 { margin-left: 4rem; }
+.indent-3 { margin-left: 6rem; }
+.indent-4 { margin-left: 8rem; }
+.indent-5 { margin-left: 10rem; }
+.indent-6 { margin-left: 12rem; }
+.indent-7 { margin-left: 14rem; }
+.indent-8 { margin-left: 16rem; }
+@media (max-width: 600px) {
+  .indent-1 { margin-left: .75rem; } .indent-2 { margin-left: 1.5rem; } .indent-3 { margin-left: 2.25rem; }
+  .indent-4 { margin-left: 3rem; } .indent-5 { margin-left: 3.75rem; } .indent-6 { margin-left: 4.5rem; }
+  .indent-7 { margin-left: 5.25rem; } .indent-8 { margin-left: 6rem; }
+}
+
+
+form label { display: block; margin-top: .5rem; font-weight: 600; }
+input, textarea { width: 100%; padding: .5rem; border: 1px solid #d0d7de; border-radius: 6px; font: inherit; }
+button { margin-top: .5rem; padding: .4rem .9rem; border: 1px solid #1f883d; background: #1f883d;
+  color: #fff; border-radius: 6px; cursor: pointer; font: inherit; }
+.site-header button { margin: 0; background: transparent; border-color: #fff; }
+.card { padding: 1rem 1.25rem; max-width: 420px; }
+.reply summary { cursor: pointer; color: #0969da; font-size: .875rem; }
+.discussion-list li { margin: .5rem 0; }

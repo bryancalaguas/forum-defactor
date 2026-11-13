@@ -1,18 +1,25 @@
 {
-    "name": "student/forum-refactor",
-    "description": "Nested forum replies lab (PHP, MySQL, PDO, Bramus Router, Mustache)",
-    "type": "project",
+    "name": "mustache/mustache",
+    "description": "A Mustache implementation in PHP.",
+    "keywords": ["templating", "mustache"],
+    "homepage": "https://github.com/bobthecow/mustache.php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Hileman",
+            "email": "justin@justinhileman.info",
+            "homepage": "http://justinhileman.com"
+        }
+    ],
     "require": {
-        "php": ">=8.2",
-        "ext-pdo": "*",
-        "ext-pdo_mysql": "*",
-        "ext-mbstring": "*",
-        "bramus/router": "^1.6",
-        "mustache/mustache": "^2.14"
+        "php": ">=5.2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7|~4.0|~5.0",
+        "friendsofphp/php-cs-fixer": "~1.11"
     },
     "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        }
+        "psr-0": { "Mustache": "src/" }
     }
 }
